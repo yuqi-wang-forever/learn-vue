@@ -1,0 +1,18 @@
+<div id="app">
+  <button @click="count++">{{count}}</button>
+</div>
+
+<script>
+  import { createApp } from "vue";
+  const app = createApp({
+    data() {
+      return {
+        count: 0,
+      };
+    },
+  }).mount("#app");
+  app.config.errorHandler = (err) => {
+    // 处理错误
+  };
+  app.component("TodoDeleteButton", TodoDeleteButton);
+</script>
